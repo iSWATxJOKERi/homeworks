@@ -115,9 +115,7 @@ class MetaCorgiSnacks
     if name.start_with?("define_")
       arr = []
       parse = name[("define_".length)..-1]
-      arr << parse
-      args.each {|ele| arr << ele}
-
+      arr.push(parse, *args)
       MetaCorgiSnacks.define_snack(arr)
     else
       raise "No method error"
@@ -130,8 +128,8 @@ class MetaCorgiSnacks
 
   def self.define_snack(name)
     # Your code goes here...
-    info = @snack_box.get_bone_info(name[1])
-    tastiness = @snack_box.get_bone_tastiness(name[1])
+    info = name[0].get_bone_info(name[1])
+    tastiness = name[0].get_bone_tastiness(name[1])
     result = "#{name[0]}: #{info}: #{tastiness} "
     tastiness > 30 ? "* #{result}" : result
   end
