@@ -1,0 +1,27 @@
+/* PHASE 1: Header */
+body {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.header {
+    width: 900px;
+    background: red;
+}
+
+.header-logo {
+    display: flex;
+    justify-content: left;
+    margin: auto;
+}
+
+.header-nav {
+    float: right;
+}
+
+.header-list {
+    display: flex;
+    justify-content: right;
+    
+}
